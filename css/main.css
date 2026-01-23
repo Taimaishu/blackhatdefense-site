@@ -1,10 +1,6 @@
-/* ===============================
-   Black Hat Defense LLC – Dark Theme
-   =============================== */
-
 :root {
   --bg-main: #0b0d10;
-  --bg-section: #12151b;
+  --bg-soft: #12151b;
   --text-main: #e6e6e6;
   --text-muted: #a0a6b0;
   --accent-red: #c4161c;
@@ -12,7 +8,6 @@
   --border-soft: #1e2330;
 }
 
-/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,16 +21,14 @@ body {
   line-height: 1.6;
 }
 
-/* ===============================
-   Header
-   =============================== */
+/* ================= Header ================= */
 
 .site-header {
-  background: rgba(11, 13, 16, 0.85);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--border-soft);
   position: sticky;
   top: 0;
+  background: rgba(11, 13, 16, 0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border-soft);
   z-index: 1000;
 }
 
@@ -49,7 +42,8 @@ body {
 }
 
 .logo img {
-  height: 36px;
+  height: 38px;
+  display: block;
 }
 
 .main-nav a {
@@ -63,20 +57,18 @@ body {
   color: #ffffff;
 }
 
-.nav-cta {
-  padding: 0.5rem 1rem;
+.main-nav .nav-cta {
+  padding: 0.45rem 1rem;
   border: 1px solid var(--accent-red);
   border-radius: 6px;
   color: #ffffff;
 }
 
-.nav-cta:hover {
-  background-color: var(--accent-red);
+.main-nav .nav-cta:hover {
+  background: var(--accent-red);
 }
 
-/* ===============================
-   Layout
-   =============================== */
+/* ================= Layout ================= */
 
 main {
   max-width: 1100px;
@@ -85,66 +77,34 @@ main {
 }
 
 section {
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 
-/* ===============================
-   Typography
-   =============================== */
+/* ================= Hero ================= */
 
-h1 {
+.hero h1 {
   font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
-h2 {
-  font-size: 1.9rem;
-  margin-bottom: 1rem;
-}
-
-p {
-  color: var(--text-muted);
+.hero p {
   max-width: 800px;
+  color: var(--text-muted);
   margin-bottom: 1rem;
 }
 
-/* ===============================
-   Hero
-   =============================== */
+/* ================= Services ================= */
 
-.hero {
-  padding-top: 2rem;
-}
-
-/* ===============================
-   Buttons
-   =============================== */
-
-.button {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--accent-red);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 6px;
-}
-
-.button:hover {
-  background-color: var(--accent-red-hover);
-}
-
-/* ===============================
-   Services
-   =============================== */
-
-.services {
-  margin-top: 4rem;
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .section-intro {
+  color: var(--text-muted);
   margin-bottom: 3rem;
+  max-width: 700px;
 }
 
 .service-grid {
@@ -160,9 +120,14 @@ p {
     rgba(12, 14, 18, 0.95)
   );
   border: 1px solid var(--border-soft);
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 2rem;
   transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-red);
 }
 
 .service-card h3 {
@@ -174,14 +139,24 @@ p {
   color: var(--text-muted);
 }
 
-.service-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent-red);
+/* ================= Buttons ================= */
+
+.button {
+  display: inline-block;
+  margin-top: 2.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent-red);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
 }
 
-/* ===============================
-   Footer
-   =============================== */
+.button:hover {
+  background: var(--accent-red-hover);
+}
+
+/* ================= Footer ================= */
 
 footer {
   border-top: 1px solid var(--border-soft);
