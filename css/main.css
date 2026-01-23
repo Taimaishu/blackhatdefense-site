@@ -1,29 +1,28 @@
-/* ============================
-   Black Hat Defense LLC
-   Global Stylesheet
-   ============================ */
+/* ===============================
+   Black Hat Defense LLC – Base Theme
+   =============================== */
 
 :root {
-  --bg-primary: #0b0c10;
-  --bg-secondary: #111318;
-  --text-primary: #ffffff;
-  --text-secondary: #b5b8c0;
-  --accent-red: #c1121f;
-  --accent-red-hover: #a00e19;
-  --border-soft: rgba(255,255,255,0.08);
+  --bg-main: #0b0d10;
+  --bg-section: #12151b;
+  --text-main: #e6e6e6;
+  --text-muted: #a0a6b0;
+  --accent-red: #c4161c;
+  --accent-red-hover: #e01b22;
+  --border-soft: #1e2330;
 }
 
+/* Global Reset */
 * {
   box-sizing: border-box;
-}
-
-html, body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+}
+
+body {
+  background: radial-gradient(circle at top left, #141824, #0b0d10);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
   line-height: 1.6;
 }
 
@@ -31,60 +30,63 @@ html, body {
 main {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 4rem 2rem;
 }
 
 section {
   margin-bottom: 4rem;
 }
 
-/* Headings */
+/* Typography */
 h1 {
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-bottom: 1rem;
 }
 
 p {
-  color: var(--text-secondary);
+  color: var(--text-muted);
   max-width: 800px;
+  margin-bottom: 1rem;
 }
 
-/* Buttons & Links */
-a {
-  color: var(--accent-red);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-a:hover {
-  color: var(--accent-red-hover);
-}
-
-.button {
+/* Buttons */
+a.button {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
   background-color: var(--accent-red);
   color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
   border-radius: 6px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.button:hover {
+a.button:hover {
   background-color: var(--accent-red-hover);
+  transform: translateY(-1px);
 }
 
 /* Footer */
 footer {
   border-top: 1px solid var(--border-soft);
-  padding: 2rem 1.5rem;
+  padding: 2rem;
   text-align: center;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffffff;
 }
