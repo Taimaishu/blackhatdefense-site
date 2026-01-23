@@ -135,6 +135,17 @@ section {
   margin-bottom: 1rem;
 }
 
+.hero-image img {
+  width: 460px;
+  max-width: 460px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 80px rgba(255, 60, 55, 1.2))
+          drop-shadow(0 0 140px rgba(240, 40, 40, 0.9))
+          drop-shadow(0 0 200px rgba(220, 30, 35, 0.6))
+          drop-shadow(0 0 280px rgba(200, 22, 28, 0.4));
+}
+
 /* ===============================
    Services Section
    =============================== */

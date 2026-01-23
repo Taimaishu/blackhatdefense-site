@@ -220,8 +220,8 @@ body {
 }
 
 .hero-image img {
-  width: 400px;
-  max-width: 400px;
+  width: 460px;
+  max-width: 460px;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 80px rgba(255, 60, 55, 1.2))
@@ -229,6 +229,7 @@ body {
           drop-shadow(0 0 200px rgba(220, 30, 35, 0.6))
           drop-shadow(0 0 280px rgba(200, 22, 28, 0.4));
 }
+
 
 /* SERVICES SECTION */
 .services-section {
