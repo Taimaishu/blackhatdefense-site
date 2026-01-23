@@ -1,5 +1,5 @@
 /* ===============================
-   Black Hat Defense LLC – Theme
+   Black Hat Defense LLC – Main Theme
    =============================== */
 
 :root {
@@ -13,7 +13,10 @@
   --border-soft: #1e2330;
 }
 
-/* Reset */
+/* ===============================
+   Reset
+   =============================== */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -28,11 +31,11 @@ body {
 }
 
 /* ===============================
-   Header
+   Header / Navigation
    =============================== */
 
 .site-header {
-  background: rgba(11, 13, 16, 0.9);
+  background: rgba(11, 13, 16, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border-soft);
   position: sticky;
@@ -43,23 +46,47 @@ body {
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.2rem 2rem;
+  padding: 1.25rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo img {
-  height: 56px;
-  background: transparent;
-  filter: drop-shadow(0 0 6px rgba(255,255,255,0.35));
+/* ===============================
+   Logo (FINAL FIX)
+   =============================== */
+
+.logo {
+  display: flex;
+  align-items: center;
 }
+
+.logo-img {
+  height: 84px;              /* Larger and authoritative */
+  width: auto;
+  display: block;
+
+  /* Kill white-box feel safely */
+  background-color: rgba(11, 13, 16, 0.85);
+  padding: 6px 8px;
+  border-radius: 10px;
+
+  /* Subtle glow like demo */
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.12),
+    0 6px 18px rgba(0,0,0,0.65);
+}
+
+/* ===============================
+   Navigation Links
+   =============================== */
 
 .main-nav a {
   margin-left: 2rem;
   text-decoration: none;
   color: var(--text-muted);
   font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 .main-nav a:hover {
@@ -67,10 +94,11 @@ body {
 }
 
 .main-nav .nav-cta {
-  padding: 0.45rem 1rem;
+  padding: 0.5rem 1.1rem;
   border: 1px solid var(--accent-red);
   border-radius: 6px;
   color: #ffffff;
+  transition: background-color 0.2s ease;
 }
 
 .main-nav .nav-cta:hover {
@@ -92,7 +120,7 @@ section {
 }
 
 /* ===============================
-   Hero
+   Hero Section
    =============================== */
 
 .hero h1 {
@@ -108,7 +136,7 @@ section {
 }
 
 /* ===============================
-   Services
+   Services Section
    =============================== */
 
 .services h2 {
@@ -119,7 +147,7 @@ section {
 .section-intro {
   color: var(--text-muted);
   margin-bottom: 3rem;
-  max-width: 700px;
+  max-width: 720px;
 }
 
 .service-grid {
@@ -131,11 +159,11 @@ section {
 .service-card {
   background: linear-gradient(
     180deg,
-    rgba(18, 20, 25, 0.95),
-    rgba(12, 14, 18, 0.95)
+    rgba(18, 20, 25, 0.96),
+    rgba(12, 14, 18, 0.96)
   );
   border: 1px solid var(--border-soft);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 2rem;
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
@@ -161,16 +189,18 @@ section {
 .button {
   display: inline-block;
   margin-top: 2.5rem;
-  padding: 0.85rem 1.75rem;
+  padding: 0.9rem 1.9rem;
   background-color: var(--accent-red);
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .button:hover {
   background-color: var(--accent-red-hover);
+  transform: translateY(-1px);
 }
 
 /* ===============================
@@ -179,7 +209,7 @@ section {
 
 footer {
   border-top: 1px solid var(--border-soft);
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
