@@ -230,6 +230,19 @@ body {
           drop-shadow(0 0 280px rgba(200, 22, 28, 0.4));
 }
 
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 300px;
+    max-width: 90%;
+    margin-top: 2rem;
+  }
+}
+
 
 /* SERVICES SECTION */
 .services-section {

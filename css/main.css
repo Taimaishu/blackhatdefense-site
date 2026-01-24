@@ -234,3 +234,16 @@ footer a {
 footer a:hover {
   color: #ffffff;
 }
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 300px;
+    max-width: 90%;
+    margin-top: 2rem;
+  }
+}
