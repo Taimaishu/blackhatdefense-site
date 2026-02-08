@@ -921,3 +921,230 @@ body {
 .policy-card a:hover {
   color: #c4161c;
 }
+
+/* Vuln-PLC gallery (2x2 grid with captions) */
+.vulnplc-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.vulnplc-item {
+  margin: 0;
+}
+
+.vulnplc-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px; /* optional, matches your modern look */
+}
+
+.vulnplc-item figcaption {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+/* Mobile: stack to 1 column */
+@media (max-width: 900px) {
+  .vulnplc-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================
+   Vuln-PLC Right-Side Floating Screenshots (overlay on logo)
+   =============================== */
+
+.vulnplc-right {
+  position: relative;
+}
+
+/* Make the logo behind more visible */
+.vulnplc-logo {
+  width: 360px;          /* closer to your “original” feel */
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+
+  /* slightly less insane glow so the logo stays readable */
+  opacity: 0.22;         /* key: more visible behind cards */
+  filter: drop-shadow(0 0 55px rgba(255, 55, 55, 0.40))
+          drop-shadow(0 0 110px rgba(200, 22, 28, 0.18));
+}
+
+/* Overlay grid floats over the logo */
+.vulnplc-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 380px;          /* larger grid = larger thumbs */
+  max-width: 95%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;             /* more breathing room */
+  z-index: 2;
+}
+
+/* No “container” look: figure itself is transparent */
+.vulnplc-card {
+  margin: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.vulnplc-card figcaption {
+  margin-top: 6px;
+  padding: 0;
+  font-size: 0.8rem;
+  opacity: 0.75;
+  text-align: center;
+}
+.vulnplc-card img {
+  cursor: zoom-in;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vulnplc-card img:active {
+  transform: scale(1.6);
+  z-index: 5;
+  cursor: zoom-out;
+}
+
+/* Clickable thumbnail wrapper */
+.vulnplc-thumb {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+
+  /* subtle glass feel on the IMAGE only (not the caption) */
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.40);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  cursor: zoom-in;
+}
+
+.vulnplc-thumb:hover {
+  transform: translateY(-2px);
+  border-color: rgba(196, 22, 28, 0.35);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.55);
+}
+
+.vulnplc-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Plain text caption (no box) */
+.vulnplc-card figcaption {
+  margin-top: 10px;
+  padding: 0;            /* removes “container” feel */
+  background: transparent;
+  border: none;
+
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.55);
+}
+
+/* Mobile: stop overlapping the logo and stack nicely */
+@media (max-width: 900px) {
+  .vulnplc-overlay {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 18px;
+  }
+
+  .vulnplc-logo {
+    opacity: 0.20;
+    width: 320px;
+    max-width: 320px;
+  }
+}
+
+/* ===============================
+   Vuln-PLC Lightbox (CSS-only :target)
+   =============================== */
+
+.vulnplc-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+}
+
+.vulnplc-lightbox:target {
+  display: block;
+}
+
+.vulnplc-lightbox-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.78);
+}
+
+.vulnplc-lightbox-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(1100px, 92vw);
+  max-height: 88vh;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(10, 12, 16, 0.92);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.65);
+  padding: 14px;
+
+  overflow: auto;
+}
+
+.vulnplc-lightbox-panel img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.vulnplc-lightbox-caption {
+  margin-top: 10px;
+  color: rgba(255,255,255,0.84);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.vulnplc-lightbox-close {
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  display: inline-block;
+
+  text-decoration: none;
+  color: rgba(255,255,255,0.9);
+  font-size: 1.7rem;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 10px;
+
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.vulnplc-lightbox-close:hover {
+  border-color: rgba(196, 22, 28, 0.35);
+}
+
