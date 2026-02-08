@@ -28,6 +28,7 @@
 
 <section class="about-section">
   <div class="about-container">
+
     <div class="about-content">
       <h2>Vuln-PLC</h2>
       <h3>A Black Hat Defense ICS/SCADA Training Lab</h3>
@@ -40,6 +41,12 @@
       <p>
         The project is designed to simulate realistic operational technology (OT) attack surfaces—including unsafe configurations,
         exposed industrial protocols, and lateral movement paths—without risking production infrastructure.
+      </p>
+      
+      <h3>What This Demonstrates</h3>
+      <p>
+        This project demonstrates practical ICS/SCADA security capability, including protocol-level analysis,
+        realistic attack path modeling, and safety-aware offensive testing methodology within controlled environments.
       </p>
 
       <h3>Intended Use</h3>
@@ -65,11 +72,80 @@
       </p>
     </div>
 
-    <div class="about-image">
-      <img src="assets/images/BHD_Logo1.png" alt="Vuln-PLC">
+    <!-- RIGHT SIDE: logo + floating 2x2 screenshots overlay -->
+    <div class="about-image vulnplc-right">
+      <img src="assets/images/BHD_Logo1.png" alt="Vuln-PLC" class="vulnplc-logo">
+
+      <div class="vulnplc-overlay" aria-label="Vuln-PLC screenshots">
+        <figure class="vulnplc-card">
+          <a class="vulnplc-thumb" href="#vp1" aria-label="Open screenshot: lab startup">
+            <img src="assets/images/vuln-plc/vuln-plc_start.png" alt="Vuln-PLC lab startup">
+          </a>
+          <figcaption>Containerized lab startup (services online)</figcaption>
+        </figure>
+
+        <figure class="vulnplc-card">
+          <a class="vulnplc-thumb" href="#vp2" aria-label="Open screenshot: HMI login">
+            <img src="assets/images/vuln-plc/plc1-login.png" alt="Vuln-PLC login interface">
+          </a>
+          <figcaption>HMI login interface (auth surface)</figcaption>
+        </figure>
+
+        <figure class="vulnplc-card">
+          <a class="vulnplc-thumb" href="#vp3" aria-label="Open screenshot: process visualization">
+            <img src="assets/images/vuln-plc/plc1-HMI.png" alt="Vuln-PLC HMI view">
+          </a>
+          <figcaption>Process visualization (tank + live sensors)</figcaption>
+        </figure>
+
+        <figure class="vulnplc-card">
+          <a class="vulnplc-thumb" href="#vp4" aria-label="Open screenshot: alerts">
+            <img src="assets/images/vuln-plc/process-control-alerts.png" alt="Vuln-PLC alerting view">
+          </a>
+          <figcaption>Control alerts &amp; event monitoring</figcaption>
+        </figure>
+      </div>
     </div>
+
   </div>
 </section>
+
+<!-- CSS-only Lightbox targets (no JS) -->
+<div id="vp1" class="vulnplc-lightbox" aria-label="Expanded screenshot: lab startup">
+  <a href="#" class="vulnplc-lightbox-bg" aria-label="Close"></a>
+  <div class="vulnplc-lightbox-panel" role="dialog" aria-modal="true">
+    <a href="#" class="vulnplc-lightbox-close" aria-label="Close">×</a>
+    <img src="assets/images/vuln-plc/vuln-plc_start.png" alt="Vuln-PLC lab startup">
+    <div class="vulnplc-lightbox-caption">Containerized lab startup (services online)</div>
+  </div>
+</div>
+
+<div id="vp2" class="vulnplc-lightbox" aria-label="Expanded screenshot: HMI login">
+  <a href="#" class="vulnplc-lightbox-bg" aria-label="Close"></a>
+  <div class="vulnplc-lightbox-panel" role="dialog" aria-modal="true">
+    <a href="#" class="vulnplc-lightbox-close" aria-label="Close">×</a>
+    <img src="assets/images/vuln-plc/plc1-login.png" alt="Vuln-PLC login interface">
+    <div class="vulnplc-lightbox-caption">HMI login interface (auth surface)</div>
+  </div>
+</div>
+
+<div id="vp3" class="vulnplc-lightbox" aria-label="Expanded screenshot: process visualization">
+  <a href="#" class="vulnplc-lightbox-bg" aria-label="Close"></a>
+  <div class="vulnplc-lightbox-panel" role="dialog" aria-modal="true">
+    <a href="#" class="vulnplc-lightbox-close" aria-label="Close">×</a>
+    <img src="assets/images/vuln-plc/plc1-HMI.png" alt="Vuln-PLC HMI view">
+    <div class="vulnplc-lightbox-caption">Process visualization (tank + live sensors)</div>
+  </div>
+</div>
+
+<div id="vp4" class="vulnplc-lightbox" aria-label="Expanded screenshot: alerts">
+  <a href="#" class="vulnplc-lightbox-bg" aria-label="Close"></a>
+  <div class="vulnplc-lightbox-panel" role="dialog" aria-modal="true">
+    <a href="#" class="vulnplc-lightbox-close" aria-label="Close">×</a>
+    <img src="assets/images/vuln-plc/process-control-alerts.png" alt="Vuln-PLC alerting view">
+    <div class="vulnplc-lightbox-caption">Control alerts &amp; event monitoring</div>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="footer-container">
